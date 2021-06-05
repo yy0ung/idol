@@ -26,34 +26,27 @@
     </style>
 </head>
 <script>
-function linksSetColor(color){
-  var alist = document.querySelectorAll('a');
-  var i;
-  for(i=0; i<5; i++){
-  if(i<4) continue;
-  alist[i].style.color = color};
-}
-
-function backgroundSetColor(color){
-  document.querySelector('body').style.backgroundColor=color;
-}
-
-function bodySetColor(color){
-  document.querySelector('body').style.color= color;
-}
 function darkBrightHandle(self){
   var target = document.querySelector('body');
   if(self.value==='dark'){
-    backgroundSetColor('black');
-    bodySetColor('white');
+    target.style.backgroundColor='black';
+    target.style.color='white';
     self.value='bright';
-    linksSetColor('grey');
+    var alist = document.querySelectorAll('a');
+    var i;
+    for(i=0; i<5; i++){
+    if(i<4) continue;
+    alist[i].style.color = 'grey'};
 
   }else{
-    backgroundSetColor('white');
-    bodySetColor('black');
+    target.style.backgroundColor='white';
+    target.style.color='black';
     self.value='dark';
-    linksSetColor('#605587');
+    var alist = document.querySelectorAll('a');
+    var i;
+    for(i=0; i<5; i++){
+    if(i<4) continue;
+    alist[i].style.color = '#605587'};
   }
 
 };
